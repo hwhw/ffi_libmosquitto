@@ -512,7 +512,7 @@ function M.__index:unsubscribe_callback_set_wrapper(on_unsubscribe)
 end
 
 function M.__index:log_callback_set_wrapper(on_log)
-  return self:log_callback_set(function(_, _, level, str) on_log(level, str) end)
+  return self:log_callback_set(function(_, _, level, str) on_log(level, ffi.string(str)) end)
 end
 
 -- even higher level wrappers
