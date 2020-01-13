@@ -500,7 +500,7 @@ function M.__index:publish_callback_set_wrapper(on_publish)
 end
 
 function M.__index:message_callback_set_wrapper(on_message)
-  return self:message_callback_set(function(_, _, message) on_publish(message:copy()) end)
+  return self:message_callback_set(function(_, _, message) on_message(message:copy()) end)
 end
 
 function M.__index:subscribe_callback_set_wrapper(on_subscribe)
